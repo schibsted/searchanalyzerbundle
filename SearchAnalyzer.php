@@ -6,7 +6,7 @@ class SearchAnalyzer
 {
 
     protected $_fields;
-    
+
     protected $_sniffers;
 
     public function __construct($fields, $sniffers)
@@ -24,24 +24,49 @@ class SearchAnalyzer
      * @param string $string
      * @return array query converted to array of real fieldname => value
      */
-    public function convert($string)
+    public function convert($string, $array = array())
     {
-        $string = trim($string);
-        if (empty($string))  {
-            throw new \Exception('Not valid query');
-        }
-        if (strpos($string, ':') === false) return $this->_guess($string);
 
-        $pattern = '/([^,:]+){1}:([^,:]+){1}/';
-        $foundAnything = preg_match_all($pattern, $string, $matches);
-        if (!$foundAnything) {
-            throw new \Exception('Not valid query');
+        $string = trim((string) $string);
+        if (empty($string) && empty($array))  {
+            return null;
         }
-        $result = $this->_replaceFields(array_combine($matches[1], $matches[2]));
+        $result = array();
+        if (!empty($string)) {
+            if (strpos($string, ':') === false) $result = $this->_guess($string);
+            else {
+                $pattern = '/([^,:]+){1}:([^,:]+){1}/';
+                $foundAnything = preg_match_all($pattern, $string, $matches);
+                if (!$foundAnything) {
+                    throw new \Exception('Not valid query');
+                }
+                $result = $this->_replaceFields(array_combine($matches[1], $matches[2]));
+            }
+        }
+
+        if (!empty($array)) {
+            $array = $this->_replaceFields($array);
+            $result = array_merge($array, $result);
+        }
         if (empty($result)) {
             throw new \Exception('Not valid query');
         }
         return $result;
+    }
+
+    /**
+     * Convert an array back to string
+     *
+     * @param array $query
+     * @return string
+     */
+    public function string(array $query)
+    {
+        $query_string = array();
+        foreach ($query as $key => $param) {
+            $query_string[] = "{$key}:{$param}";
+        }
+        return join(',', $query_string);
     }
 
     protected function _guess($string = '')
@@ -56,18 +81,18 @@ class SearchAnalyzer
 
     protected function _replaceFields(array $fields = array())
     {
-
         $ret = array();
         foreach ($fields as $field => $query) {
+            $value = trim($query);
+            if (empty($value)) continue;
             $field = trim($field);
             if (array_key_exists($field, $this->_fields)) {
-                $ret[$field] = trim($query);
+                $ret[$field] = $value;
                 continue;
             }
-            $found = false;
             foreach ($this->_fields as $real => $aliases) {
                 if (in_array($field, $aliases)) {
-                    $ret[$real] = trim($query);
+                    $ret[$real] = $value;
                     break;
                 }
             }
