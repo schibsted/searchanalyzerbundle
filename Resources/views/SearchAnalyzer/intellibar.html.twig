@@ -1,0 +1,114 @@
+<div id="search-container">
+    <form method="GET" id="persons-search" action="{{ path('PersonsIndex') }}">
+        <div class="search_item_container">
+            <input id="users-search-input"
+                   placeholder="{% if query is defined %}
+                            {%- trans %}Search for more details here{% endtrans -%}
+                       {% else %}
+                            {%- trans %}Search for any user detail here{% endtrans -%}
+                       {% endif %}"
+                   tabindex="0" type="text" name="search_query[new]"
+                   value="{% if query -%}
+                           {{- query -}}
+                       {%- elseif app.session.hasFlash('query_string') -%}
+                            {{- app.session.flash('query_string') -}}
+                       {%- endif %}"
+                   autocomplete=off accesskey="f" />
+        </div>
+        <div class="search_button_container">
+            <input type="image" src="{{ asset('bundles/ambassador/images/ui/icn_search.png') }}" class="search-image" name="submit" />
+        </div>
+        {% if query is defined %}
+        <div class="search_button_container">
+            <a href="{{ path('PersonsIndex') }}">
+                <image src="{{ asset('bundles/ambassador/images/ui/icn_cancel_search.png') }}" />
+            </a>
+        </div>
+        {% endif %}
+        <input type="hidden" name="page" value="1" id="search-page" />
+    </form>
+</div>
+<div id="search-help" style="display: none;">
+    <h4>{% trans %}Search help{% endtrans %}</h4>
+    <p>{% trans %}These are the keywords you can use in the searchbox. {% endtrans %}</p>
+    <p>{% trans %}Search syntax: keyword:query{% endtrans %}</p>
+    <p>{% trans %}Separate with comma to use more keywords.{% endtrans %}</p>
+    <hr>
+    <dl>
+    {% for field, keywords in fields %}
+        <dt id="field-{{ field }}">
+            {{ field_translations[field] }}
+        </dt>
+        {% for keyword in keywords %}<dd>{{ keyword }}</dd>{% endfor %}
+    {% endfor %}
+    </dl>
+</div>
+<div id="search-item-template" style="display:none;visibility:hidden;position:absolute;">
+    <div class="search_item_container">
+        <label class="hugging">%FIELD%</label><input type="text" class="hugging search-input" name="search_query[%FIELD%]" value="%VALUE%">
+        <a class="remove-query-field" tabindex="-1" href="#">
+            <img src="{{ asset('bundles/ambassador/images/ui/icn_cancel_search.png') }}">
+        </a>
+    </div>
+</div>
+{% block javascripts %}
+<script type="text/javascript">
+$(document).ready(function() {
+    window.resetPage = function() {
+        console.log('reset');
+        $('#search-page').val(1);
+    };
+
+    // prepare legend translations and display by parsing search help
+    var $search_help = $('#search-help dl');
+
+    window.l10n = window.l10n || {};
+    window.l10n.search_fields = {};
+    window.search = {};
+    window.search.aliases = {};
+    $search_help.find('dt').each(function(i) {
+        var $dt = $(this),
+            id = $dt.attr('id'), // field-
+            field = id.substring(6),
+            translated = $dt.html(),
+            $children = $dt.nextUntil('dt'),
+            aliases = [];
+
+        $children.each( function(i) { window.search.aliases[$(this).html()] = field; });
+        window.l10n.search_fields[field] = translated
+    } );
+
+    var $search_input = $('#users-search-input');
+    $(document).keyup(function(e) { if (e.keyCode == 27) { $('#search-help').hide(); $('#users-search-input').focus(); } } );
+
+    $search_input.bind('keypress', function(event) {
+        if (event.which == 44) {
+            var current_length = $search_input.val().length;
+            $search_input.boxify();
+            if ($search_input.val().length != current_length) {
+                event.preventDefault();
+            }
+        } else if (event.which == 63) {
+            $('#search-help').show();
+            event.preventDefault();
+        }
+    }).change(resetPage);
+    $('.search-input').change(resetPage);
+    $('.search-image').click(resetPage);
+
+    $search_input.boxify().takeRest(25);
+    $('a.remove-query-field').bind('click', function(e) {
+        var $this = $(this);
+        $this.parent().remove();
+        resetPage();
+        $search_input.takeRest(25).focus();
+    });
+    {% if focus %}
+        $search_input.focus();
+    {% endif %}
+    $(window).resize(function() {
+    });
+
+});
+</script>
+{% endblock %}

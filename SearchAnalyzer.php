@@ -99,4 +99,10 @@ class SearchAnalyzer
         }
         return $ret;
     }
+
+    public function getFieldDefinitions()
+    {
+        return $this->_fields;
+    }
+
 }
