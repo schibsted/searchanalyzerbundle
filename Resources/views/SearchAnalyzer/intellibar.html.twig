@@ -96,12 +96,12 @@ $(document).ready(function() {
     $('.search-input').change(resetPage);
     $('.search-image').click(resetPage);
 
-    $search_input.boxify().takeRest(25);
+    $search_input.boxify().takeRest(45);
     $('a.remove-query-field').bind('click', function(e) {
         var $this = $(this);
         $this.parent().remove();
         resetPage();
-        $search_input.takeRest(25).focus();
+        $search_input.takeRest(45).focus();
     });
     {% if focus %}
         $search_input.focus();
