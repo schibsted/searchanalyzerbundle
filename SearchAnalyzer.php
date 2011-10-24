@@ -48,9 +48,6 @@ class SearchAnalyzer
             $array = $this->_replaceFields($array);
             $result = array_merge($array, $result);
         }
-        if (empty($result)) {
-            throw new \Exception('Not valid query');
-        }
         return $result;
     }
 
