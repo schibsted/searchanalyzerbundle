@@ -10,8 +10,8 @@
                    tabindex="0" type="text" name="search_query[new]"
                    value="{% if query -%}
                            {{- query -}}
-                       {%- elseif app.session.hasFlash('query_string') -%}
-                            {{- app.session.flash('query_string') -}}
+                       {%- elseif app.session.get('query_string') -%}
+                            {{- app.session.get('query_string') -}}
                        {%- endif %}"
                    autocomplete=off accesskey="f" />
         </div>
