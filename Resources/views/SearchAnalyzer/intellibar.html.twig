@@ -1,5 +1,8 @@
 <div id="search-container">
     <form method="GET" id="persons-search" action="{{ path('PersonsIndex') }}">
+        <div class="search_button_container">
+            <input type="image" src="{{ asset('bundles/ambassador/images/ui/icn_search.png') }}" class="search-image" name="submit" />
+        </div>
         <div class="search_item_container">
             <input id="users-search-input"
                    placeholder="{% if query is defined %}
@@ -15,11 +18,8 @@
                        {%- endif %}"
                    autocomplete=off accesskey="f" />
         </div>
-        <div class="search_button_container">
-            <input type="image" src="{{ asset('bundles/ambassador/images/ui/icn_search.png') }}" class="search-image" name="submit" />
-        </div>
         {% if query is defined %}
-        <div class="search_button_container">
+        <div class="search_cancel_button_container">
             <a href="{{ path('PersonsIndex') }}">
                 <image src="{{ asset('bundles/ambassador/images/ui/icn_cancel_search.png') }}" />
             </a>
@@ -107,6 +107,7 @@ $(document).ready(function() {
         $search_input.focus();
     {% endif %}
     $(window).resize(function() {
+        $search_input.takeRest(45);
     });
 
 });
