@@ -81,6 +81,24 @@ $(document).ready(function() {
     var $search_input = $('#users-search-input');
     $(document).keyup(function(e) { if (e.keyCode == 27) { $('#search-help').hide(); $('#users-search-input').focus(); } } );
 
+    removableSearch = function(event) {
+        var $input = $(event.target);
+        if (event.which == 8 && !$input.val()) {
+            var $prev_box = $input.parent().prev('.search_item_container');
+            if ($input.prev('label').size()) {
+                $input.parent().remove();
+                var rest_elements = $('#persons-search').find('input[type=text]');
+                if (rest_elements.size() == 1) {
+                    rest_elements.first().focus();
+                }
+            };
+            if ($prev_box.size()) {
+                $prev_input = $prev_box.find('input[type=text]');
+                $prev_input.selectRange($prev_input.val().length, $prev_input.val().length);
+            }
+        }
+    };
+
     $search_input.bind('keypress', function(event) {
         if (event.which == 44) {
             var current_length = $search_input.val().length;
@@ -97,6 +115,9 @@ $(document).ready(function() {
     $('.search-image').click(resetPage);
 
     $search_input.boxify().takeRest(45);
+
+    $search_input.bind('keydown', removableSearch);
+    
     $('a.remove-query-field').bind('click', function(e) {
         var $this = $(this);
         $this.parent().remove();
