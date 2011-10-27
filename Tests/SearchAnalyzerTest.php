@@ -122,15 +122,6 @@ class SearchAnalyzerTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    public function testConvertInvalid()
-    {
-        $this->assertTrue(assertException($this->sa, ':'), 'Did not throw expected Exception');
-        $this->assertTrue(assertException($this->sa, ' : '), 'Did not throw expected Exception');
-        $this->assertTrue(assertException($this->sa, ':stuff'), 'Did not throw expected Exception');
-        $this->assertTrue(assertException($this->sa, 'stuff:'), 'Did not throw expected Exception');
-        $this->assertTrue(assertException($this->sa, 'thisdoesntexist:field'), 'Did not throw expected Exception');
-    }
-
     public function testCleanArray()
     {
         $tests  = array(
