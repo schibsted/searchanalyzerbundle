@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 class SearchAnalyzerController extends Controller
 {
 
-    public function intelliBarAction($query = null, $focus = false)
+    public function intelliBarAction($collection, $query = null, $focus = false)
     {
-        $sa = $this->get('searchanalyzer');
+        $sa = $this->get('searchanalyzer_' . $collection);
         $fields = $sa->getFieldDefinitions();
         $field_translations = array();
         $translator = $this->get('translator');
