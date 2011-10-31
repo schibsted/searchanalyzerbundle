@@ -1,5 +1,5 @@
 <div id="search-container" class="pagealigned">
-    <form method="GET" id="persons-search" action="{{ path('PersonsIndex') }}">
+    <form method="GET" id="{{ collection }}-search" action="{{ path }}">
         <div class="search_button_container">
             <input type="image" src="{{ asset('bundles/ambassador/images/ui/icn_search.png') }}" class="search-image" name="submit" />
         </div>
@@ -20,7 +20,7 @@
         </div>
         {% if query is defined %}
         <div class="search_cancel_button_container">
-            <a href="{{ path('PersonsIndex') }}">
+            <a href="{{ path }}">
                 <image src="{{ asset('bundles/ambassador/images/ui/icn_cancel_search.png') }}" />
             </a>
         </div>
@@ -87,7 +87,7 @@ $(document).ready(function() {
             var $prev_box = $input.parent().prev('.search_item_container');
             if ($input.prev('label').size()) {
                 $input.parent().remove();
-                var rest_elements = $('#persons-search').find('input[type=text]');
+                var rest_elements = $('#{{ collection }}-search').find('input[type=text]');
                 if (rest_elements.size() == 1) {
                     rest_elements.first().focus();
                 }

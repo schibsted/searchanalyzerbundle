@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 class SearchAnalyzerController extends Controller
 {
 
-    public function intelliBarAction($collection, $query = null, $focus = false)
+    public function intelliBarAction($collection, $path, $query = null, $focus = false)
     {
         $sa = $this->get('searchanalyzer_' . $collection);
         $fields = $sa->getFieldDefinitions();
@@ -24,7 +24,7 @@ class SearchAnalyzerController extends Controller
             }
         }
 
-        return $this->render('RedpillLinproSearchAnalyzerBundle:SearchAnalyzer:intellibar.html.twig', compact('fields', 'field_translations', 'query', 'focus'));
+        return $this->render('RedpillLinproSearchAnalyzerBundle:SearchAnalyzer:intellibar.html.twig', compact('fields', 'collection', 'path', 'field_translations', 'query', 'focus'));
     }
 
 }
