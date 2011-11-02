@@ -95,6 +95,7 @@ $(document).ready(function() {
             if ($prev_box.size()) {
                 $prev_input = $prev_box.find('input[type=text]');
                 $prev_input.selectRange($prev_input.val().length, $prev_input.val().length);
+                event.preventDefault();
             }
         }
     };
