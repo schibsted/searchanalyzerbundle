@@ -4,17 +4,17 @@
             <input type="image" src="{{ asset('bundles/ambassador/images/ui/icn_search.png') }}" class="search-image" name="submit" />
         </div>
         <div class="search_item_container">
-            <input id="users-search-input"
+            <input id="{{ collection }}-search-input"
                    placeholder="{% if query is defined %}
-                            {%- trans %}Search for more details here{% endtrans -%}
+                            {%- trans %}Search for more details here (type ? for help){% endtrans -%}
                        {% else %}
-                            {%- trans %}Search for any user detail here{% endtrans -%}
+                            {%- trans %}Search by entering any detail here (type ? for help){% endtrans -%}
                        {% endif %}"
                    tabindex="0" type="text" name="search_query[new]"
                    value="{% if query -%}
                            {{- query -}}
-                       {%- elseif app.session.get('query_string') -%}
-                            {{- app.session.get('query_string') -}}
+                       {%- elseif app.session.get(collection + '_query_string') -%}
+                            {{- app.session.get(collection + '_query_string') -}}
                        {%- endif %}"
                    autocomplete=off accesskey="f" />
         </div>
@@ -78,8 +78,8 @@ $(document).ready(function() {
         window.l10n.search_fields[field] = translated
     } );
 
-    var $search_input = $('#users-search-input');
-    $(document).keyup(function(e) { if (e.keyCode == 27) { $('#search-help').hide(); $('#users-search-input').focus(); } } );
+    var $search_input = $('#{{ collection }}-search-input');
+    $(document).keyup(function(e) { if (e.keyCode == 27) { $('#search-help').hide(); $('#{{ collection }}-search-input').focus(); } } );
 
     removableSearch = function(event) {
         var $input = $(event.target);
