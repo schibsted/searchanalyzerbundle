@@ -118,6 +118,10 @@ $(document).ready(function() {
     $search_input.boxify().takeRest(45);
 
     $search_input.bind('keydown', removableSearch);
+    $('#{{- collection -}}-search').bind('submit', function() {
+        $search_input.boxify();
+        return true;
+    });
     
     $('a.remove-query-field').bind('click', function(e) {
         var $this = $(this);
