@@ -26,6 +26,12 @@
         </div>
         {% endif %}
         <input type="hidden" name="page" value="1" id="search-page" />
+        {% if all_contexts is defined %}
+            <div class="all-contexts">
+                <input type="checkbox" id="{{ collection }}-all-contexts" name="all_contexts"{% if all_contexts %} checked{% endif %}>
+                <label for="{{ collection }}-all-contexts">{% trans %}Include results from other contexts{% endtrans %}</label>
+            </div>
+        {% endif %}
     </form>
 </div>
 <div id="search-help" style="display: none;">
