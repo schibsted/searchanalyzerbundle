@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>Search for more details here (type ? for help)</source>
+        <target>Sök för mer detaljer här (skriv ? för hjälp)</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Search by entering any detail here (type ? for help)</source>
+        <target>Sök igenom att skriva in kriterier här (skriv ? för hjälp)</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Search help</source>
+        <target>Sökhjälp</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>These are the keywords you can use in the searchbox. </source>
+        <target>Dessa nyckelord kan du använda i sökfältet. </target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Search syntax: keyword:query</source>
+        <target>Söksyntax: nyckelord:sökning</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Separate with comma to use more keywords.</source>
+        <target>Separera med ',' för att använda flera nyckelord</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
