@@ -42,10 +42,8 @@
     <hr>
     <dl>
     {% for field, keywords in fields %}
-        <dt id="field-{{ field }}">
-            {{ field_translations[field] }}
-        </dt>
-        {% for keyword in keywords %}<dd>{{ keyword }}</dd>{% endfor %}
+        <dt id="field-{{ field }}" class="auto-field">{{ field_translations[field] }}</dt>
+        {% for keyword in keywords %}<dd class="auto-field">{{ keyword }}</dd>{% endfor %}
     {% endfor %}
     </dl>
 </div>
@@ -105,6 +103,19 @@ $(document).ready(function() {
             }
         }
     };
+
+    $('.auto-field').click(function (event) {
+        var $input = $('#{{ collection }}-search-input'),
+            $item = $(event.target);
+
+        $input.val($input.val() + $item.html() + ': ');
+        $input.boxify();
+
+        var $auto_item = $input.parent().prev('.search_item_container').find('input[type=text]');
+
+        $auto_item.selectRange(0, $auto_item.val().length);
+        $auto_item.focus();
+    });
 
     $search_input.bind('keypress', function(event) {
         if (event.which == 44) {
