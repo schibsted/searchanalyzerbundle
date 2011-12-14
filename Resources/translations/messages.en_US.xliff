@@ -7,24 +7,52 @@
         <target>Search for more details here (type ? for help)</target>
       </trans-unit>
       <trans-unit id="2">
+        <source>Search for users by entering any detail here (type ? for help)</source>
+        <target>Search for users by entering any detail here (type ? for help)</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Search for products by entering any detail here (type ? for help)</source>
+        <target>Search for products by entering any detail here (type ? for help)</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Search for campaigns by entering any detail here (type ? for help)</source>
+        <target>Search for campaigns by entering any detail here (type ? for help)</target>
+      </trans-unit>
+      <trans-unit id="5">
         <source>Search by entering any detail here (type ? for help)</source>
         <target>Search by entering any detail here (type ? for help)</target>
       </trans-unit>
-      <trans-unit id="3">
+      <trans-unit id="6">
+        <source>Include results from other contexts</source>
+        <target>Include results from other contexts</target>
+      </trans-unit>
+      <trans-unit id="7">
         <source>Search help</source>
         <target>Search help</target>
       </trans-unit>
-      <trans-unit id="4">
+      <trans-unit id="8">
+        <source>These are the keywords you can use in the searchbox.</source>
+        <target>These are the keywords you can use in the searchbox.</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Search syntax:</source>
+        <target>Search syntax:</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>keyword:query</source>
+        <target>keyword:query</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Separate with comma to use more keywords.</source>
+        <target>Separate with comma to use more keywords.</target>
+      </trans-unit>
+      <trans-unit id="12">
         <source>These are the keywords you can use in the searchbox. </source>
         <target>These are the keywords you can use in the searchbox. </target>
       </trans-unit>
-      <trans-unit id="5">
+      <trans-unit id="13">
         <source>Search syntax: keyword:query</source>
         <target>Search syntax: keyword:query</target>
-      </trans-unit>
-      <trans-unit id="6">
-        <source>Separate with comma to use more keywords.</source>
-        <target>Separate with comma to use more keywords.</target>
       </trans-unit>
     </body>
   </file>
