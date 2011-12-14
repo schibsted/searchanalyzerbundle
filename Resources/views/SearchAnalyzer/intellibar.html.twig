@@ -5,11 +5,19 @@
         </div>
         <div class="search_item_container">
             <input id="{{ collection }}-search-input"
-                   placeholder="{% if query is defined %}
-                            {%- trans %}Search for more details here (type ? for help){% endtrans -%}
-                       {% else %}
-                            {%- trans %}Search by entering any detail here (type ? for help){% endtrans -%}
-                       {% endif %}"
+                   placeholder="{% if query is not empty -%}
+                                    {%- trans %}Search for more details here (type ? for help){% endtrans -%}
+                               {%- else -%}
+                                    {%- if collection is sameas('users') -%}
+                                        {%- trans %}Search for users by entering any detail here (type ? for help){% endtrans -%}
+                                    {%- elseif collection is sameas('products') -%}
+                                        {%- trans %}Search for products by entering any detail here (type ? for help){% endtrans -%}
+                                    {%- elseif collection is sameas('products') -%}
+                                        {%- trans %}Search for campaigns by entering any detail here (type ? for help){% endtrans -%}
+                                    {%- else -%}
+                                        {%- trans %}Search by entering any detail here (type ? for help){% endtrans -%}
+                                    {%- endif -%}
+                               {%- endif %}"
                    tabindex="0" type="text" name="search_query[new]"
                    value="{% if query -%}
                            {{- query -}}
@@ -36,8 +44,8 @@
 </div>
 <div id="search-help" style="display: none;">
     <h4>{% trans %}Search help{% endtrans %}</h4>
-    <p>{% trans %}These are the keywords you can use in the searchbox. {% endtrans %}</p>
-    <p>{% trans %}Search syntax: keyword:query{% endtrans %}</p>
+    <p>{% trans %}These are the keywords you can use in the searchbox.{% endtrans %}</p>
+    <p>{% trans %}Search syntax:{% endtrans %} <span class="bold">{% trans %}keyword:query{% endtrans %}</span></p>
     <p>{% trans %}Separate with comma to use more keywords.{% endtrans %}</p>
     <hr>
     <dl>
