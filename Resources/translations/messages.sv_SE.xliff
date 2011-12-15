@@ -8,23 +8,31 @@
       </trans-unit>
       <trans-unit id="2">
         <source>Search by entering any detail here (type ? for help)</source>
-        <target>Sök igenom att skriva in kriterier här (skriv ? för hjälp)</target>
+        <target>Sök genom att skriva in kriterier här (skriv ? för hjälp)</target>
       </trans-unit>
       <trans-unit id="3">
+        <source>Include results from other contexts</source>
+        <target>Inkludera resultat från andra kontexter</target>
+      </trans-unit>
+      <trans-unit id="4">
         <source>Search help</source>
         <target>Sökhjälp</target>
       </trans-unit>
-      <trans-unit id="4">
-        <source>These are the keywords you can use in the searchbox. </source>
-        <target>Dessa nyckelord kan du använda i sökfältet. </target>
-      </trans-unit>
       <trans-unit id="5">
-        <source>Search syntax: keyword:query</source>
-        <target>Söksyntax: nyckelord:sökning</target>
+        <source>These are the keywords you can use in the searchbox.</source>
+        <target>Dessa nyckelord kan du använda i sökfältet.</target>
       </trans-unit>
       <trans-unit id="6">
+        <source>Search syntax:</source>
+        <target>Söksyntax:</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>keyword:query</source>
+        <target>nyckelord:sökning</target>
+      </trans-unit>
+      <trans-unit id="8">
         <source>Separate with comma to use more keywords.</source>
-        <target>Separera med ',' för att använda flera nyckelord</target>
+        <target>Separera med ',' för att använda flera nyckelord.</target>
       </trans-unit>
     </body>
   </file>

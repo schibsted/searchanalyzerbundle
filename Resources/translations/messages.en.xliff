@@ -11,18 +11,26 @@
         <target>Search by entering any detail here (type ? for help)</target>
       </trans-unit>
       <trans-unit id="3">
+        <source>Include results from other contexts</source>
+        <target>Include results from other contexts</target>
+      </trans-unit>
+      <trans-unit id="4">
         <source>Search help</source>
         <target>Search help</target>
       </trans-unit>
-      <trans-unit id="4">
-        <source>These are the keywords you can use in the searchbox. </source>
-        <target>These are the keywords you can use in the searchbox. </target>
-      </trans-unit>
       <trans-unit id="5">
-        <source>Search syntax: keyword:query</source>
-        <target>Search syntax: keyword:query</target>
+        <source>These are the keywords you can use in the searchbox.</source>
+        <target>These are the keywords you can use in the searchbox.</target>
       </trans-unit>
       <trans-unit id="6">
+        <source>Search syntax:</source>
+        <target>Search syntax:</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>keyword:query</source>
+        <target>keyword:query</target>
+      </trans-unit>
+      <trans-unit id="8">
         <source>Separate with comma to use more keywords.</source>
         <target>Separate with comma to use more keywords.</target>
       </trans-unit>
