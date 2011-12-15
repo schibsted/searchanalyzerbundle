@@ -8,15 +8,7 @@
                    placeholder="{% if query is not empty -%}
                                     {%- trans %}Search for more details here (type ? for help){% endtrans -%}
                                {%- else -%}
-                                    {%- if collection is sameas('users') -%}
-                                        {%- trans %}Search for users by entering any detail here (type ? for help){% endtrans -%}
-                                    {%- elseif collection is sameas('products') -%}
-                                        {%- trans %}Search for products by entering any detail here (type ? for help){% endtrans -%}
-                                    {%- elseif collection is sameas('products') -%}
-                                        {%- trans %}Search for campaigns by entering any detail here (type ? for help){% endtrans -%}
-                                    {%- else -%}
-                                        {%- trans %}Search by entering any detail here (type ? for help){% endtrans -%}
-                                    {%- endif -%}
+                                    {%- trans %}Search by entering any detail here (type ? for help){% endtrans -%}
                                {%- endif %}"
                    tabindex="0" type="text" name="search_query[new]"
                    value="{% if query -%}
