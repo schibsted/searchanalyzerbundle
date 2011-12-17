@@ -8,7 +8,8 @@
                    placeholder="{% if query is not empty -%}
                                     {%- trans %}Search for more details here (type ? for help){% endtrans -%}
                                {%- else -%}
-                                    {%- trans %}Search by entering any detail here (type ? for help){% endtrans -%}
+                                    {% set name = collection|trans %}
+                                    {%- trans with {'%name%': name} %}Search for %name% by entering any detail here (type ? for help){% endtrans -%}
                                {%- endif %}"
                    tabindex="0" type="text" name="search_query[new]"
                    value="{% if query -%}

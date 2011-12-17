@@ -7,8 +7,8 @@
         <target>Search for more details here (type ? for help)</target>
       </trans-unit>
       <trans-unit id="2">
-        <source>Search by entering any detail here (type ? for help)</source>
-        <target>Search by entering any detail here (type ? for help)</target>
+        <source>Search for %name% by entering any detail here (type ? for help)</source>
+        <target>Search for %name% by entering any detail here (type ? for help)</target>
       </trans-unit>
       <trans-unit id="3">
         <source>Include results from other contexts</source>
@@ -33,6 +33,10 @@
       <trans-unit id="8">
         <source>Separate with comma to use more keywords.</source>
         <target>Separate with comma to use more keywords.</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Search by entering any detail here (type ? for help)</source>
+        <target>Search by entering any detail here (type ? for help)</target>
       </trans-unit>
     </body>
   </file>
