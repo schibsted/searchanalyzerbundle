@@ -42,7 +42,7 @@
     <p>{% trans %}Separate with comma to use more keywords.{% endtrans %}</p>
     <hr>
     {% for field, keywords in fields %}
-        <p><i>{{ field_translations[field] }}</i> : <strong>{% for keyword in keywords %}{{ keyword }} {% endfor %}</strong></p>
+        <p><i id="field-{{ field }}" class="auto-field">{{ field_translations[field] }}</i> : <strong>{% for keyword in keywords %}{{ keyword }} {% endfor %}</strong></p>
     {% endfor %}
 </div>
 <div id="search-item-template" style="display:none;visibility:hidden;position:absolute;">
@@ -68,12 +68,12 @@ $(document).ready(function() {
     window.l10n.search_fields = {};
     window.search = {};
     window.search.aliases = {};
-    $search_help.find('dt').each(function(i) {
-        var $dt = $(this),
-            id = $dt.attr('id'), // field-
+    $search_help.find('i.auto-field').each(function(i) {
+        var $i = $(this),
+            id = $i.attr('id'), // field-
             field = id.substring(6),
-            translated = $dt.html(),
-            $children = $dt.nextUntil('dt'),
+            translated = $i.html(),
+            $children = $i.nextUntil('i'),
             aliases = [];
 
         $children.each( function(i) { window.search.aliases[$(this).html()] = field; });
