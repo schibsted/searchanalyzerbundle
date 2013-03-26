@@ -20,9 +20,6 @@ class SearchAnalyzerController extends Controller
         $translator = $this->get('translator');
         foreach ($fields as $key => $aliases) {
             $field_translations[$key] = $translator->trans($key);
-            if (!in_array($key, $fields[$key])) {
-                $fields[$key][] = $key;
-            }
         }
 
         return $this->render('RedpillLinproSearchAnalyzerBundle:SearchAnalyzer:intellibar.html.twig', compact('fields', 'collection', 'path', 'field_translations', 'query', 'focus', 'all_contexts'));

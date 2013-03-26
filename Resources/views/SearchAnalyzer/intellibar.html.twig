@@ -42,7 +42,7 @@
     <p>{% trans %}Separate with comma to use more keywords.{% endtrans %}</p>
     <hr>
     {% for field, keywords in fields %}
-        <p><i id="field-{{ field }}" class="auto-field">{{ field_translations[field] }}</i> : <strong>{% for keyword in keywords %}{{ keyword }} {% endfor %}</strong></p>
+        <p><i id="field-{{ field }}" class="auto-field">{{ field_translations[field] }}</i> : <strong>{{ keywords | join(', ') }}</strong></p>
     {% endfor %}
 </div>
 <div id="search-item-template" style="display:none;visibility:hidden;position:absolute;">
