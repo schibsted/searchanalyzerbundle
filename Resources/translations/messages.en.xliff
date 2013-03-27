@@ -11,8 +11,8 @@
         <target>Search for %name% by entering any detail here (type ? for help)</target>
       </trans-unit>
       <trans-unit id="3">
-        <source>Include results from other contexts</source>
-        <target>Include results from other contexts</target>
+        <source>Show only %client% results</source>
+        <target>Show only %client% results</target>
       </trans-unit>
       <trans-unit id="4">
         <source>Search help</source>
@@ -35,6 +35,10 @@
         <target>Separate with comma to use more keywords.</target>
       </trans-unit>
       <trans-unit id="9">
+        <source>Include results from other contexts</source>
+        <target>Include results from other contexts</target>
+      </trans-unit>
+      <trans-unit id="10">
         <source>Search by entering any detail here (type ? for help)</source>
         <target>Search by entering any detail here (type ? for help)</target>
       </trans-unit>

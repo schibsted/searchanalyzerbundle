@@ -11,8 +11,8 @@
         <target>Sök efter %name% genom att skriva kriterier här (skriv ? för hjälp)</target>
       </trans-unit>
       <trans-unit id="3">
-        <source>Include results from other contexts</source>
-        <target>Inkludera resultat från andra kontexter</target>
+        <source>Show only %client% results</source>
+        <target>Visa bara %client% resultat</target>
       </trans-unit>
       <trans-unit id="4">
         <source>Search help</source>
@@ -35,6 +35,10 @@
         <target>Separera med ',' för att använda flera nyckelord.</target>
       </trans-unit>
       <trans-unit id="9">
+        <source>Include results from other contexts</source>
+        <target>Inkludera resultat från andra kontexter</target>
+      </trans-unit>
+      <trans-unit id="10">
         <source>Search by entering any detail here (type ? for help)</source>
         <target>Sök genom att skriva in kriterier här (skriv ? för hjälp)</target>
       </trans-unit>

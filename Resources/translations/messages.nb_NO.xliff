@@ -11,8 +11,8 @@
         <target>Søk etter %name% ved å skrive søkekriteriene dine her (skriv ? for hjelp)</target>
       </trans-unit>
       <trans-unit id="3">
-        <source>Include results from other contexts</source>
-        <target>Include results from other contexts</target>
+        <source>Show only %client% results</source>
+        <target>Vis bare %client% resultat</target>
       </trans-unit>
       <trans-unit id="4">
         <source>Search help</source>
@@ -35,6 +35,10 @@
         <target>Skriv komma for a legge til flere søke felt.</target>
       </trans-unit>
       <trans-unit id="9">
+        <source>Include results from other contexts</source>
+        <target>Include results from other contexts</target>
+      </trans-unit>
+      <trans-unit id="10">
         <source>Search by entering any detail here (type ? for help)</source>
         <target>Skriv søkekriteriene dine her (skriv ? for hjelp)</target>
       </trans-unit>
