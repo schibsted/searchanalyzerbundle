@@ -29,8 +29,8 @@
         <input type="hidden" name="page" value="1" id="search-page" />
         {% if all_contexts is defined %}
             <div class="all-contexts">
-                <input type="checkbox" id="{{ collection }}-all-contexts" name="all_contexts"{% if all_contexts %} checked{% endif %}>
-                <label for="{{ collection }}-all-contexts">{% trans %}Include results from other contexts{% endtrans %}</label>
+                <input type="checkbox" id="{{ collection }}-all-contexts" name="all_contexts" {% if all_contexts %} checked{% endif %}>
+                <label for="{{ collection }}-all-contexts">{% trans with {'%client%': app.session.get('clientName')} %}Show only %client% results{% endtrans %}</label>
             </div>
         {% endif %}
     </form>
@@ -42,7 +42,7 @@
     <p>{% trans %}Separate with comma to use more keywords.{% endtrans %}</p>
     <hr>
     {% for field, keywords in fields %}
-        <p><i id="field-{{ field }}" class="auto-field">{{ field_translations[field] }}</i> : <strong>{{ keywords | join(', ') }}</strong></p>
+        <p class="list"><i id="field-{{ field }}" class="auto-field">{{ field_translations[field] }}</i> : <strong>{{ keywords | join(', ') }}</strong></p>
     {% endfor %}
 </div>
 <div id="search-item-template" style="display:none;visibility:hidden;position:absolute;">
@@ -62,7 +62,7 @@ $(document).ready(function() {
     };
 
     // prepare legend translations and display by parsing search help
-    var $search_help = $('#search-help dl');
+    var $search_help = $('#search-help .list');
 
     window.l10n = window.l10n || {};
     window.l10n.search_fields = {};
