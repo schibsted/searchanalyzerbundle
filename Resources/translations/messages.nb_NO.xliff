@@ -4,11 +4,11 @@
     <body>
       <trans-unit id="1">
         <source>Search for more details here (type ? for help)</source>
-        <target>Search for more details here (type ? for help)</target>
+        <target>Legg til flere søkekriterier her (skriv ? for hjelp)</target>
       </trans-unit>
       <trans-unit id="2">
         <source>Search for %name% by entering any detail here (type ? for help)</source>
-        <target>Search for %name% by entering any detail here (type ? for help)</target>
+        <target>Søk etter %name% ved å skrive søkekriteriene dine her (skriv ? for hjelp)</target>
       </trans-unit>
       <trans-unit id="3">
         <source>Include results from other contexts</source>
@@ -16,27 +16,27 @@
       </trans-unit>
       <trans-unit id="4">
         <source>Search help</source>
-        <target>Search help</target>
+        <target>Søk hjelp</target>
       </trans-unit>
       <trans-unit id="5">
         <source>These are the keywords you can use in the searchbox.</source>
-        <target>These are the keywords you can use in the searchbox.</target>
+        <target>Dette er søkefeltene du kan bruke.</target>
       </trans-unit>
       <trans-unit id="6">
         <source>Search syntax:</source>
-        <target>Search syntax:</target>
+        <target>Søk syntaks:</target>
       </trans-unit>
       <trans-unit id="7">
         <source>keyword:query</source>
-        <target>keyword:query</target>
+        <target>felt:søke</target>
       </trans-unit>
       <trans-unit id="8">
         <source>Separate with comma to use more keywords.</source>
-        <target>Separate with comma to use more keywords.</target>
+        <target>Skriv komma for a legge til flere søke felt.</target>
       </trans-unit>
       <trans-unit id="9">
         <source>Search by entering any detail here (type ? for help)</source>
-        <target>Search by entering any detail here (type ? for help)</target>
+        <target>Skriv søkekriteriene dine her (skriv ? for hjelp)</target>
       </trans-unit>
     </body>
   </file>
