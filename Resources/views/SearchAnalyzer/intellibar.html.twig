@@ -35,15 +35,25 @@
         {% endif %}
     </form>
 </div>
-<div id="search-help" style="display: none;">
+<div id="search-help" style="display: none; z-index: 10">
     <h4>{% trans %}Search help{% endtrans %}</h4>
-    <p>{% trans %}These are the keywords you can use in the searchbox.{% endtrans %}</p>
     <p>{% trans %}Search syntax:{% endtrans %} <span class="bold">{% trans %}keyword:query{% endtrans %}</span></p>
     <p>{% trans %}Separate with comma to use more keywords.{% endtrans %}</p>
+
     <hr>
+    <h5>{% trans %}Search words{% endtrans %}</h5>
+    <p>{% trans %}These are the keywords you can use in the searchbox.{% endtrans %}</p>
+    <br>
     {% for field, keywords in fields %}
         <p class="list"><i id="field-{{ field }}" class="auto-field">{{ field_translations[field] }}</i> : <strong>{{ keywords | join(', ') }}</strong></p>
     {% endfor %}
+    <hr>
+    <h5>{% trans %}Examples{% endtrans %}</h5>
+    <ul id="examples">
+        <li class="auto-field">g:ola,f:nordmann,x:male</li>
+        <li class="auto-field">q:ola male 1979,@:gmail.com</li>
+        <li class="auto-field">u:nordman79,b:1979,a:thorshov oslo</li>
+    </ul>
 </div>
 <div id="search-item-template" style="display:none;visibility:hidden;position:absolute;">
     <div class="search_item_container">
@@ -57,7 +67,6 @@
 <script type="text/javascript">
 $(document).ready(function() {
     window.resetPage = function() {
-        console.log('reset');
         $('#search-page').val(1);
     };
 
@@ -115,6 +124,15 @@ $(document).ready(function() {
         $auto_item.focus();
     });
 
+    $('#examples li').each(function() { 
+        $(this).click(function() {
+            var text = $(this).html();
+            $('form .remove-query-field').each(function() {
+                $(this).click();
+            });
+            $search_input.val(text).boxify().takeRest(45)();
+        })
+    });
     $search_input.bind('keypress', function(event) {
         if (event.which == 44) {
             var current_length = $search_input.val().length;

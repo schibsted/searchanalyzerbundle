@@ -16,29 +16,33 @@
       </trans-unit>
       <trans-unit id="4">
         <source>Search help</source>
-        <target>Søk hjelp</target>
+        <target>Søkehjelp</target>
       </trans-unit>
       <trans-unit id="5">
-        <source>These are the keywords you can use in the searchbox.</source>
-        <target>Dette er søkefeltene du kan bruke.</target>
-      </trans-unit>
-      <trans-unit id="6">
         <source>Search syntax:</source>
         <target>Søk syntaks:</target>
       </trans-unit>
-      <trans-unit id="7">
+      <trans-unit id="6">
         <source>keyword:query</source>
-        <target>felt:søke</target>
+        <target>nøkkelord:søkeord</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Separate with comma to use more keywords.</source>
+        <target>Skriv komma for å legge til flere søke felt.</target>
       </trans-unit>
       <trans-unit id="8">
-        <source>Separate with comma to use more keywords.</source>
-        <target>Skriv komma for a legge til flere søke felt.</target>
+        <source>Search words</source>
+        <target>Nøkkelord</target>
       </trans-unit>
       <trans-unit id="9">
-        <source>Include results from other contexts</source>
-        <target>Include results from other contexts</target>
+        <source>These are the keywords you can use in the searchbox.</source>
+        <target>Dette er nøkkelordene du kan bruke.</target>
       </trans-unit>
       <trans-unit id="10">
+        <source>Examples</source>
+        <target>Eksempler</target>
+      </trans-unit>
+      <trans-unit id="11">
         <source>Search by entering any detail here (type ? for help)</source>
         <target>Skriv søkekriteriene dine her (skriv ? for hjelp)</target>
       </trans-unit>
