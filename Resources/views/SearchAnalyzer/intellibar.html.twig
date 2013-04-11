@@ -113,9 +113,11 @@ $(document).ready(function() {
 
     $('.auto-field').click(function (event) {
         var $input = $('#{{ collection }}-search-input'),
-            $item = $(event.target);
+            $item = $(event.target),
+            field = $item.attr('id'),
+            field = field.substring(6);
 
-        $input.val($input.val() + $item.html() + ': ');
+        $input.val(field + ': ');
         $input.boxify();
 
         var $auto_item = $input.parent().prev('.search_item_container').find('input[type=text]');
