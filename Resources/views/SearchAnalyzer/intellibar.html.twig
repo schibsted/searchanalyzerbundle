@@ -36,6 +36,7 @@
     </form>
 </div>
 <div id="search-help" style="display: none; z-index: 10">
+    <img class="close-filter-dialog" src="{{ asset('bundles/ambassador/images/ui/icn_cancel_search.png') }}" class="profile_img" style="padding: 10px; border: 0px solid #CCC; padding: 0px; margin: -10px -10px 0px 0px; float: right; cursor: pointer" title="{% trans %}This campaign has no image{% endtrans %}" />
     <h4>{% trans %}Search help{% endtrans %}</h4>
     <p>{% trans %}Search syntax:{% endtrans %} <span class="bold">{% trans %}keyword:query{% endtrans %}</span></p>
     <p>{% trans %}Separate with comma to use more keywords.{% endtrans %}</p>
@@ -149,6 +150,11 @@ $(document).ready(function() {
     }).change(resetPage);
     $('.search-input').change(resetPage);
     $('.search-image').click(resetPage);
+    
+    $('.close-filter-dialog').click(function (event) {
+        $('#search-help').hide(); $('#{{ collection }}-search-input').focus();
+    });
+
 
     $search_input.boxify().takeRest(45);
 
