@@ -1,6 +1,6 @@
 {
     "name": "redpilllinpro/searchanalyzerbundle",
-    "version": "1.0.0"
+    "version": "1.0.0",
     "description": "Symfony bundle for search analyzer",
     "type": "Symfony Bundle",
     "require": {},
