@@ -1,8 +1,6 @@
 {
     "name": "schibsted/searchanalyzerbundle",
-    "version": "1.0.0",
     "description": "Symfony bundle for search analyzer",
     "type": "Symfony Bundle",
-    "require": {},
-    "target-dir": "RedpillLinpro/SearchAnalyzerBundle"
+    "require": {}
 }
