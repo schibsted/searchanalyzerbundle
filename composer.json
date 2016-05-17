@@ -1,0 +1,7 @@
+{
+    "name": "redpilllinpro/searchanalyzerbundle",
+    "description": "Symfony bundle for search analyzer",
+    "type": "Symfony Bundle",
+    "require": {}
+    "target-dir": "RedpillLinpro/SearchAnalyzerBundle"
+}
