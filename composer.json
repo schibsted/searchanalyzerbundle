@@ -1,6 +1,6 @@
 {
     "name": "schibsted/searchanalyzerbundle",
     "description": "Symfony bundle for search analyzer",
-    "type": "Symfony Bundle",
+    "type": "symfony-bundle",
     "require": {}
 }
